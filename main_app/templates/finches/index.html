@@ -6,20 +6,25 @@
 {% for finch in finches %}
 
 <div class="card">
-
     <div class="card-content">
         <!-- The double curly braces are called the data tags and logic tags. They are used to
-        pass the values of the finches like name and age -->
-       <span class="card-title">{{ finch.name}}</span>
-       <p>Breed : {{ finch.breed}}</p>
-       <p>Description : {{ finch.description}}</p>
-       {% if finch.age > 0 %}
+            pass the values of the finches like name and age -->
+            <span class="card-title">{{ finch.name}}</span>
+            <p>Breed : {{ finch.breed }}</p>
+            <p>Description : {{ finch.description }}</p>
+            {% if finch.age > 0 %}
+            
+            <p>Age : {{ finch.age }}</p>
+            
+            {% else %}
+            <p>Age: Chick</p>
+            {% endif %}
 
-       <p>Age : {{ finch.age }}</p>
-
-       {% else %}
-       <p>Age: Chick</p>
-       {% endif %}
+            <!-- one way of writing the link is below -->
+            <!-- <a href="/finches/{{ finch.id }}">View {{finch.name}} Details </a> -->
+            
+            <!-- The other nice way django gives use for link is below -->
+            <a href="{% url 'detail' finch.id %}">View {{finch.name}} Details </a>
 
     </div>
 

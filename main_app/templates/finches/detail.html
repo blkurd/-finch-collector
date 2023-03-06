@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> {{ finches.name }} Details</h1>
+    <div class="card">
+        <div class="card-content">
+            <!-- The double curly braces are called the data tags and logic tags. They are used to
+            pass the values of the finches like name and age -->
+           <span class="card-title">{{ finches.name }}</span>
+           <p>Breed : {{ finches.breed }}</p>
+           <p>Description : {{ finches.description | linebreaks }}</p>
+           {% if finch.age > 0 %}
+                <p>Age : {{ finches.age }}</p>
+           {% else %}
+                 <p>Age: Chick</p>
+           {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
