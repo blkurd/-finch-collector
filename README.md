@@ -9,7 +9,7 @@ fun lil django app all about finches
 
 ## ERD
 
-![erd](https://i.imgur.com/37yYc42.png)
+![erd]()
 
 ## Routes
 
